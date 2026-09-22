@@ -21,7 +21,7 @@ h1{margin:8px 0 0;font-size:clamp(40px,6vw,68px);line-height:.98;letter-spacing:
 .settings{position:fixed;inset:0;z-index:20;display:none;overflow:auto;background:var(--bg)}.settings.open{display:block}.setwrap{width:min(840px,calc(100% - 32px));margin:auto;padding:24px 0 60px}.sethead{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.setcard{padding:24px;border:1px solid var(--line);border-radius:26px;background:var(--card)}
 .settingsIntro{color:var(--muted);font-size:12px;line-height:1.5;margin-bottom:18px}.treatments{display:grid;gap:10px}.treatmentEditor{border:1px solid var(--line);border-radius:16px;background:#fff9;overflow:hidden}.treatmentEditor summary{list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 15px;cursor:pointer}.treatmentEditor summary::-webkit-details-marker{display:none}.editorName{font-size:13px;font-weight:800}.editorMeta{margin-top:3px;color:var(--muted);font-size:10px}.chev{color:var(--muted);font-size:12px}.editorBody{padding:0 15px 15px;border-top:1px solid var(--line)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}label{display:block;margin:12px 0 6px;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.02em}.field input[type=text],.field input[type=number],input[type=date],select{width:100%;min-height:42px;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}.checkrow{display:flex;align-items:center;gap:8px;margin-top:14px;color:var(--muted);font-size:11px}.checkrow input{width:17px;height:17px;accent-color:var(--accent)}
-.freqBlock{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}.freqRow{display:grid;grid-template-columns:auto 90px 130px;gap:8px;align-items:end}.phase{margin-top:10px;padding:11px;border:1px solid var(--line);border-radius:12px;background:#fbfaf6}.phaseHead{display:flex;justify-content:space-between;align-items:center;gap:10px}.phaseTitle{font-size:11px;font-weight:800}.linkBtn{border:0;background:none;padding:0;color:var(--accent);font-size:10px;font-weight:800;cursor:pointer}.phaseGrid{display:grid;grid-template-columns:100px 130px 90px 120px;gap:8px;align-items:end}.smallNote{margin-top:7px;color:var(--muted);font-size:10px;line-height:1.4}.editorActions{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.danger{color:#9b5d5d}.addTreatment{width:100%;margin-top:12px;min-height:44px;border:1px dashed var(--line);border-radius:12px;background:transparent;color:var(--muted);cursor:pointer;font-weight:700}
+.freqBlock{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}.freqRow{display:grid;grid-template-columns:auto 90px 130px;gap:8px;align-items:end}.phase{margin-top:10px;padding:11px;border:1px solid var(--line);border-radius:12px;background:#fbfaf6}.phaseHead{display:flex;justify-content:space-between;align-items:center;gap:10px}.phaseTitle{font-size:11px;font-weight:800}.linkBtn{border:0;background:none;padding:0;color:var(--accent);font-size:10px;font-weight:800;cursor:pointer}.phaseGrid{display:grid;grid-template-columns:minmax(120px,.75fr) minmax(190px,1.25fr) minmax(110px,.65fr) minmax(110px,.65fr);gap:12px;align-items:end}.phaseUnitWrap.hidden{display:none}.phaseGrid:has(.phaseUnitWrap.hidden){grid-template-columns:minmax(120px,.8fr) minmax(210px,1.4fr) minmax(120px,.7fr)}.phaseGrid .fieldLike{min-width:0}.smallNote{margin-top:7px;color:var(--muted);font-size:10px;line-height:1.4}.editorActions{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.danger{color:#9b5d5d}.addTreatment{width:100%;margin-top:12px;min-height:44px;border:1px dashed var(--line);border-radius:12px;background:transparent;color:var(--muted);cursor:pointer;font-weight:700}
 .actions{display:flex;justify-content:flex-end;gap:9px;margin-top:24px}.btn{min-height:42px;padding:0 14px;border:1px solid var(--line);border-radius:11px;background:var(--card);cursor:pointer}.primary{border-color:var(--accent);background:var(--accent);color:white}
 @media(max-width:820px){.layout{grid-template-columns:1fr}}
 @media(max-width:640px){
@@ -42,7 +42,7 @@ h1{margin:8px 0 0;font-size:clamp(40px,6vw,68px);line-height:.98;letter-spacing:
 <div id="weekView"><div class="tablewrap"><table><thead><tr><th>Day</th><th>Body</th><th class="center">Hair</th><th class="center">Face</th></tr></thead><tbody id="week"></tbody></table></div></div>
 <div id="monthView" hidden><div class="monthNav"><button id="prevMonth" aria-label="Previous month">‹</button><div class="monthTitle" id="monthTitle"></div><button id="nextMonth" aria-label="Next month">›</button></div><div class="monthGrid" id="monthGrid"></div><div class="legend"><span><i class="calDot body"></i>Body</span><span><i class="calDot hair"></i>Hair</span><span><i class="calDot face"></i>Face</span></div><div class="selected" id="selectedDay"></div></div>
 </section>
-<div class="recovery">One exfoliation per day. If exfoliating treatments collide, Routine Rhythm automatically pushes the later treatment to the next available day. Recovery still wins over the calendar if your skin feels irritated.</div>
+<div class="recovery">IPL has first priority. Body exfoliation will never be scheduled on an IPL day, and only one exfoliating treatment can be scheduled per day. Conflicting exfoliation is automatically moved to the next available day.</div>
 </div>
 </main>
 <section class="settings" id="settings" aria-hidden="true"><div class="setwrap"><div class="sethead"><div><div class="eyebrow"><span class="dot"></span>ROUTINE CONFIGURATION</div><h2>Settings</h2></div><button class="btn" id="close">Close</button></div><div class="setcard">
@@ -76,7 +76,13 @@ let treatments=JSON.parse(localStorage.getItem("routineTreatments")||"null")||DE
 let editing=clone(treatments),monthCursor=new Date(today.getFullYear(),today.getMonth(),1),selectedDate=today;
 $("date").textContent=today.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});$("longdate").textContent=today.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"});
 function freqText(t){const f=t.frequency;if(f.type==="interval")return"Every "+f.every+" "+f.unit;if(f.type==="phased")return f.phases.map((p,i)=>{const d=p.durationWeeks?("for "+p.durationWeeks+" wk"):"ongoing";return p.mode==="weekly"?p.value+"×/week "+d:"every "+p.value+" "+p.unit+" "+d}).join(" → ");return""}
-function weeklyOffsets(count){count=Math.max(1,Math.min(7,Number(count)||1));if(count===1)return[0];const arr=[];for(let i=0;i<count;i++)arr.push(Math.round(i*6/(count-1)));return [...new Set(arr)]}
+function weeklyOffsets(count){
+ count=Math.max(1,Math.min(7,Number(count)||1));
+ if(count===1)return[0];
+ const arr=[];
+ for(let i=0;i<count;i++)arr.push(Math.floor(i*7/count));
+ return [...new Set(arr)];
+}
 function pushInterval(out,start,end,every,unit,limitEnd){let cur=new Date(start),safety=0;while(cur<=limitEnd&&safety++<500){if(cur>=end.start&&cur<=end.end)out.push(new Date(cur));if(unit==="days")cur=addDays(cur,every);else if(unit==="weeks")cur=addDays(cur,every*7);else cur=addMonths(cur,every)}}
 function occurrencesFor(t,rangeStart,rangeEnd){
  const out=[],start=parse(t.start);if(start>rangeEnd)return out;const f=t.frequency;
@@ -96,16 +102,42 @@ function occurrencesFor(t,rangeStart,rangeEnd){
  }
  return out
 }
+function isIPL(t){return t.id==="ipl"||(/ipl/i.test(t.name)&&t.area==="hair")}
 function buildSchedule(rangeStart,rangeEnd){
- const simStart=addDays(rangeStart,-40),simEnd=addDays(rangeEnd,20),events=[];
+ const simStart=addDays(rangeStart,-40),simEnd=addDays(rangeEnd,30),events=[];
  treatments.forEach((t,priority)=>occurrencesFor(t,simStart,simEnd).forEach(d=>events.push({date:new Date(d),t,priority})));
- events.sort((a,b)=>a.date-b.date||a.priority-b.priority);
- const byDate={},exfoliantTaken={};
- events.forEach(e=>{
-   let d=new Date(e.date);
-   if(e.t.exfoliant){while(exfoliantTaken[iso(d)])d=addDays(d,1);exfoliantTaken[iso(d)]=true}
-   const k=iso(d);(byDate[k]||(byDate[k]=[])).push(e.t)
+
+ // Priority order: IPL first, exfoliation second, everything else third.
+ events.sort((a,b)=>{
+   const pa=isIPL(a.t)?0:(a.t.exfoliant?1:2);
+   const pb=isIPL(b.t)?0:(b.t.exfoliant?1:2);
+   return pa-pb||a.date-b.date||a.priority-b.priority;
  });
+
+ const byDate={},iplTaken={},exfoliantTaken={};
+
+ // Reserve all IPL dates first so exfoliation can never land on them.
+ events.filter(e=>isIPL(e.t)).forEach(e=>{
+   const k=iso(e.date);
+   iplTaken[k]=true;
+   (byDate[k]||(byDate[k]=[])).push(e.t);
+ });
+
+ // Schedule exfoliants next. Push forward past IPL days or another exfoliant.
+ events.filter(e=>e.t.exfoliant&&!isIPL(e.t)).forEach(e=>{
+   let d=new Date(e.date),guard=0;
+   while((iplTaken[iso(d)]||exfoliantTaken[iso(d)])&&guard++<60)d=addDays(d,1);
+   const k=iso(d);
+   exfoliantTaken[k]=true;
+   (byDate[k]||(byDate[k]=[])).push(e.t);
+ });
+
+ // Add non-IPL, non-exfoliating treatments without changing their dates.
+ events.filter(e=>!isIPL(e.t)&&!e.t.exfoliant).forEach(e=>{
+   const k=iso(e.date);
+   (byDate[k]||(byDate[k]=[])).push(e.t);
+ });
+
  return byDate
 }
 function knownNote(t){
@@ -135,7 +167,10 @@ function renderMonth(){
 function renderSelected(schedule){const items=schedule[iso(selectedDate)]||[];$("selectedDay").innerHTML="<strong>"+selectedDate.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"})+"</strong>"+(items.length?"<ul>"+items.map(t=>"<li>"+t.name+"</li>").join("")+"</ul>":'<span style="color:var(--muted)">No scheduled treatments.</span>')}
 function setView(v){const week=v==="week";$("weekView").hidden=!week;$("monthView").hidden=week;$("weekBtn").classList.toggle("active",week);$("monthBtn").classList.toggle("active",!week);$("viewKicker").textContent=week?"MONDAY — SUNDAY":"CALENDAR";$("viewTitle").textContent=week?"Weekly view":"Monthly view";if(!week)renderMonth()}
 $("weekBtn").onclick=()=>setView("week");$("monthBtn").onclick=()=>setView("month");$("prevMonth").onclick=()=>{monthCursor=new Date(monthCursor.getFullYear(),monthCursor.getMonth()-1,1);renderMonth()};$("nextMonth").onclick=()=>{monthCursor=new Date(monthCursor.getFullYear(),monthCursor.getMonth()+1,1);renderMonth()};
-function phaseHTML(p,pi){return '<div class="phase" data-phase="'+pi+'"><div class="phaseHead"><span class="phaseTitle">Phase '+(pi+1)+'</span><button class="linkBtn danger removePhase" type="button">Remove</button></div><div class="phaseGrid"><div><label>Duration (weeks)</label><input class="phaseDuration" type="number" min="1" placeholder="Ongoing" value="'+(p.durationWeeks??"")+'"></div><div><label>Frequency type</label><select class="phaseMode"><option value="weekly" '+(p.mode==="weekly"?"selected":"")+'>Times per week</option><option value="interval" '+(p.mode==="interval"?"selected":"")+'>Every X…</option></select></div><div><label>'+(p.mode==="weekly"?"Times/week":"Every")+'</label><input class="phaseValue" type="number" min="1" max="'+(p.mode==="weekly"?7:365)+'" value="'+p.value+'"></div><div><label>Unit</label><select class="phaseUnit" '+(p.mode==="weekly"?"disabled":"")+ '><option value="days" '+(p.unit==="days"?"selected":"")+'>Days</option><option value="weeks" '+(p.unit==="weeks"?"selected":"")+'>Weeks</option><option value="months" '+(p.unit==="months"?"selected":"")+'>Months</option></select></div></div></div>'}
+function phaseHTML(p,pi){
+ const weekly=p.mode==="weekly";
+ return '<div class="phase" data-phase="'+pi+'"><div class="phaseHead"><span class="phaseTitle">Phase '+(pi+1)+'</span><button class="linkBtn danger removePhase" type="button">Remove</button></div><div class="phaseGrid"><div class="fieldLike"><label>Duration</label><input class="phaseDuration" type="number" min="1" placeholder="Ongoing" value="'+(p.durationWeeks??"")+'"><div class="smallNote">weeks</div></div><div class="fieldLike"><label>Frequency</label><select class="phaseMode"><option value="weekly" '+(weekly?"selected":"")+'>Times per week</option><option value="interval" '+(!weekly?"selected":"")+'>Every X days / weeks / months</option></select></div><div class="fieldLike"><label>'+(weekly?"Times per week":"Every")+'</label><input class="phaseValue" type="number" min="1" max="'+(weekly?7:365)+'" value="'+p.value+'"></div><div class="phaseUnitWrap '+(weekly?"hidden":"")+'"><label>Unit</label><select class="phaseUnit"><option value="days" '+(p.unit==="days"?"selected":"")+'>Days</option><option value="weeks" '+(p.unit==="weeks"?"selected":"")+'>Weeks</option><option value="months" '+(p.unit==="months"?"selected":"")+'>Months</option></select></div></div>'+(weekly?'<div class="smallNote">Sessions are spaced as evenly as possible across Monday–Sunday.</div>':'')+'</div>'
+}
 function editorHTML(t,i){const f=t.frequency;return '<details class="treatmentEditor" data-index="'+i+'"><summary><div><div class="editorName">'+t.name+'</div><div class="editorMeta">'+areaLabel(t.area)+' · '+freqText(t)+'</div></div><span class="chev">Edit ↓</span></summary><div class="editorBody"><div class="grid2"><div class="field"><label>Name</label><input class="tName" type="text" value="'+t.name.replace(/"/g,"&quot;")+'"></div><div class="field"><label>Area</label><select class="tArea"><option value="body" '+(t.area==="body"?"selected":"")+'>Body</option><option value="hair" '+(t.area==="hair"?"selected":"")+'>Hair removal</option><option value="face" '+(t.area==="face"?"selected":"")+'>Face</option></select></div></div><div class="grid2"><div class="field"><label>Start date</label><input class="tStart" type="date" value="'+t.start+'"></div><div class="field"><label>Schedule type</label><select class="freqType"><option value="interval" '+(f.type==="interval"?"selected":"")+'>Repeating interval</option><option value="phased" '+(f.type==="phased"?"selected":"")+'>Phased schedule</option></select></div></div><label class="checkrow"><input class="tExfoliant" type="checkbox" '+(t.exfoliant?"checked":"")+'> This is an exfoliating treatment</label><div class="freqBlock">'+(f.type==="interval"?'<div class="freqRow"><div><label>Repeat</label><span class="smallNote">Every</span></div><div><label>Every</label><input class="intervalEvery" type="number" min="1" value="'+f.every+'"></div><div><label>Unit</label><select class="intervalUnit"><option value="days" '+(f.unit==="days"?"selected":"")+'>Days</option><option value="weeks" '+(f.unit==="weeks"?"selected":"")+'>Weeks</option><option value="months" '+(f.unit==="months"?"selected":"")+'>Months</option></select></div></div>':f.phases.map(phaseHTML).join("")+'<button class="linkBtn addPhase" type="button">+ Add phase</button><div class="smallNote">Leave phase duration blank for the final ongoing phase.</div>')+'</div><div class="editorActions"><span class="smallNote">Exfoliating treatments are automatically de-conflicted.</span><button class="linkBtn danger deleteTreatment" type="button">Delete treatment</button></div></div></details>'}
 function renderEditors(){$("treatmentEditors").innerHTML=editing.map(editorHTML).join("");bindEditors()}
 function syncEditor(i,card){const t=editing[i];t.name=card.querySelector(".tName").value||"Untitled treatment";t.area=card.querySelector(".tArea").value;t.start=card.querySelector(".tStart").value||iso(today);t.exfoliant=card.querySelector(".tExfoliant").checked;const type=card.querySelector(".freqType").value;if(type==="interval"){t.frequency={type:"interval",every:Math.max(1,+card.querySelector(".intervalEvery")?.value||1),unit:card.querySelector(".intervalUnit")?.value||"days"}}else{const phases=[...card.querySelectorAll(".phase")].map(ph=>({durationWeeks:ph.querySelector(".phaseDuration").value?Math.max(1,+ph.querySelector(".phaseDuration").value):null,mode:ph.querySelector(".phaseMode").value,value:Math.max(1,+ph.querySelector(".phaseValue").value||1),unit:ph.querySelector(".phaseMode").value==="weekly"?"weeks":ph.querySelector(".phaseUnit").value}));t.frequency={type:"phased",phases:phases.length?phases:[{durationWeeks:null,mode:"interval",value:1,unit:"days"}]}}}
